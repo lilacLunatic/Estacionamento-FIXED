@@ -259,7 +259,7 @@ SELECT pg_catalog.setval('entrada_id_seq', 1, false);
 --
 
 INSERT INTO funcionario (id, login, senha, admin) VALUES (4, 'joao', 'mango', false);
-
+INSERT INTO funcionario (login, senha, admin) VALUES ('admin', 'admin', true);
 
 --
 -- TOC entry 2062 (class 0 OID 0)
