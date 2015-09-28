@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>Estacionamento</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+</head>
+<body>
+	<div class="container">
+		Carros no estacionamento:
+		<table class="table">
+			<tr>
+				<th>Placa veiculo</th>
+				<th>Andar da vaga</th>
+				<th>Numero da vaga</th>
+				<th>Hora de entrada</th>
+				<th>Tipo de veiculo</th>
+			</tr>
+			<!-- BEGIN BLOCK_ESTACIONAMENTO -->
+  				<tr>
+  					<td>{PLACA}</td>
+  					<td>{ANDAR_ENTRADA}</td>
+  					<td>{NUMERO_ENTRADA}</td>
+  					<td>{HORA}</td>
+  					<td>{TIPO_VEICULO}</td>
+  				</tr>
+  			<!-- END BLOCK_ESTACIONAMENTO -->
+		</table>
+		<br>
+		Vagas disponiveis:
+		<table class="table">
+			<tr>
+				<th>Numero da vaga</th>
+				<th>Andar da vaga</th>
+				<th>Tipo de veiculo para a vaga</th>
+			</tr>
+			<!-- BEGIN BLOCK_VAGAS -->
+  				<tr>
+  					<td>{NUMERO_VAGA}</td>
+  					<td>{ANDAR_VAGA}</td>
+  					<td>{TIPO_VAGA}</td>
+  				</tr>
+  			<!-- END BLOCK_VAGAS -->
+		</table>
+		
+		<!-- BEGIN BLOCK_NO_VAGAS -->
+		Não há vagas disponíveis
+		<!-- END BLOCK_NO_VAGAS -->
+	</div>
+</body>
+</html>

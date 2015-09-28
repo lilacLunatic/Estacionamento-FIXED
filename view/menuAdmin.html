@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title>
+			Gerenciamento do estacionamento
+		</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+	</head>
+
+	<body>
+
+		<script>
+		    function submitForm(id){
+		        var preco = id.parentElement.parentElement.getElementsByTagName("input")[0].value;
+		        var id = id.parentElement.parentElement.getElementsByTagName("input")[1].value;
+		        document.getElementById("preco").value = preco;
+		        document.getElementById("id").value = id;
+		        document.getElementById("formId").submit();
+		    }
+		</script>
+
+		<form action="../web/alteraPreco.php" id="formId" method="post">
+			<input type="hidden" name="preco" id="preco" />
+			<input type="hidden" name="id" id="id" />
+		</form>
+
+		<table class="table">
+			<tr>
+				<th>Tipo</th>
+				<th>Valor</th>
+				<th>Alterar</th>
+			</tr>
+		<!-- BEGIN BLOCK_PRECOS -->
+			<tr>
+				<td>{NOME_VAGA}</td>
+				<td>
+					<input type="text" value="{VALOR_VAGA}" required name="valor"/>
+					<input type="hidden" value="{ID_PRECO}" name="id"/>
+				</td>
+				<td><button type="submit" onclick="submitForm(this)">Alterar preco</button></td>
+			</tr>
+		<!-- END BLOCK_PRECOS -->
+		</table>
+		<br>
+		<form method="post" action="../web/addVaga.php">
+		<table class="table">
+			<tr>
+				<th>Numero da vaga</th>
+				<th>Andar da vaga</th>
+				<th>Tipo de veiculo para a vaga</th>
+			</tr>
+			<!-- BEGIN BLOCK_VAGAS -->
+  				<tr>
+  					<td>{NUMERO_VAGA}</td>
+  					<td>{ANDAR_VAGA}</td>
+  					<td>{TIPO_VAGA}</td>
+  				</tr>
+  			<!-- END BLOCK_VAGAS -->
+  			
+  			<tr>
+  				
+  				<td><input type="text" name="numero" required /></td>
+  				<td><input type="text" name="andar" required /></td>
+  				<td>
+  				<select name="tipos">
+		    	<!-- BEGIN BLOCK_OPTIONS -->
+  					<option value="{OPTION}">{OPTION_NAME}</option>
+  				<!-- END BLOCK_OPTIONS -->
+  				</select>
+  				</td>
+  				<td><button class="btn btn-default" type="submit">Nova vaga</button></td>
+  			</tr>
+  			
+		</table>
+		</form>
+		<a href="../web/logout.php">Logout</a>
+	</body>
+</html>
